@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+# shellcheck disable=SC2191
 # ==============================================================================
 # Community Hass.io Add-ons: Grafana
 # Runs the Grafana Server

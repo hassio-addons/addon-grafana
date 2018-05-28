@@ -130,7 +130,7 @@ Grafana setup. For a list of available plugins, see:
 
 <https://grafana.com/plugins>
 
-Note: Adding many plugins will result in a longer start-up time for the add-on.
+**Note**: _Adding plugins will result in a longer start-up for the add-on._
 
 ## Using it with the InfluxDB Community add-on
 
