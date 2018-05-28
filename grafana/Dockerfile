@@ -11,7 +11,7 @@ RUN \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     \
-    && URL="https://github.com/fg2it/grafana-on-raspberry/releases/download/v${GRAFANA}/grafana-${GRAFANA}.linux-${ARCH}.tar.gz" \
+    && URL="https://github.com/fg2it/grafana-on-raspberry/releases/download/v${GRAFANA}/grafana_${GRAFANA}_${ARCH}.deb" \
     && if [ "${ARCH}" = "amd64" ]; then \
         URL="https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${GRAFANA}_${ARCH}.deb"; \
     fi \
