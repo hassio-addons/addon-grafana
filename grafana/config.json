@@ -16,8 +16,7 @@
   ],
   "boot": "auto",
   "ports": {
-    "8086/tcp": 8086,
-    "8888/tcp": 8888
+    "3000/tcp": 3000
   },
   "hassio_api": true,
   "homeassistant_api": false,
