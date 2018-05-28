@@ -62,11 +62,6 @@ comparison to installing any other Hass.io add-on.
 [![Docker Layers][amd64-layers-shield]][amd64-microbadger]
 [![Docker Pulls][amd64-pulls-shield]][amd64-dockerhub]
 
-[![Docker Architecture][i386-arch-shield]][i386-dockerhub]
-[![Docker Version][i386-version-shield]][i386-microbadger]
-[![Docker Layers][i386-layers-shield]][i386-microbadger]
-[![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
-
 ## Configuration
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
@@ -289,14 +284,6 @@ SOFTWARE.
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-grafana/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-grafana/pipelines
 [home-assistant]: https://home-assistant.io
-[i386-anchore-shield]: https://anchore.io/service/badges/image/4b740c5341d0c0aa373563eaf98f3b98655859ee2d5f4e1b226e7976162c9961
-[i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Figrafana-i386%3Alatest
-[i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
-[i386-dockerhub]: https://hub.docker.com/r/hassioaddons/grafana-i386
-[i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/grafana-i386.svg
-[i386-microbadger]: https://microbadger.com/images/hassioaddons/grafana-i386
-[i386-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/grafana-i386.svg
-[i386-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/grafana-i386.svg
 [issue]: https://github.com/hassio-addons/addon-inflgrafanaxdb/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-grafana.svg
