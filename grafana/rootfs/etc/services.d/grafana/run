@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Grafana
+# Runs the Grafana Server
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+declare -a options
+
+# Wait for Memcached to become available
+s6-svwait -u -t 5000 /var/run/s6/services/memcached
+
+hass.log.info 'Starting Grafana'
+
+options+=(--config="/etc/grafana/grafana.ini")
+options+=(--homepath="/usr/share/grafana")
+
+# Run Grafana
+exec grafana-server "${options[@]}"
+#sleep 900
