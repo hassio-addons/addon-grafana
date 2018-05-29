@@ -39,7 +39,7 @@ comparison to installing any other Hass.io add-on.
 1. Install the "Grafana" add-on.
 1. Start the "Grafana" add-on.
 1. Check the logs of the "Grafana" to see if everything went well.
-1. Open the Web UI and login with: admin / hassio.
+1. Open the Web UI and log in with: admin / hassio.
    Be sure to change the logins, once logged in.
 
 **NOTE**: Do not add this repository to Hass.io, please use:
@@ -279,7 +279,7 @@ SOFTWARE.
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-grafana/54491?u=frenck
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-grafana/54674?u=frenck
 [frenck]: https://github.com/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-grafana/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-grafana/pipelines
@@ -294,4 +294,3 @@ SOFTWARE.
 [releases]: https://github.com/hassio-addons/addon-grafana/releases
 [repository]: https://github.com/hassio-addons/repository
 [semver]: http://semver.org/spec/v2.0.0.htm
-[webtools]: https://github.com/ukdtom/WebTools.bundle/wiki
