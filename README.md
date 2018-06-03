@@ -130,9 +130,12 @@ Grafana setup. For a list of available plugins, see:
 ## Using it with the InfluxDB Community add-on
 
 Grafana does not come out of the box pre-configured, but letting it interact
-with the community [InfluxDB add-on](hassio-addons/repository/addon-influxdb) is pretty easy. Please, follow the instructions from the on how to [create a database](hassio-addons/repository/addon-influxdb#integrating-into-home-assistant) for Home Assistant.
+with the community [InfluxDB add-on][influxdb-addon] is pretty easy. Please,
+follow the instructions from the on how to [create a database][create-db]
+for Home Assistant.
 
-- Create a new user for Grafana on InfluxDB (InfluxDB Admin -> Users and "+ Create User")
+- Create a new user for Grafana on InfluxDB
+  (InfluxDB Admin -> Users and "+ Create User")
 - Login into Grafana
 - Create a new datasource:
   - Name: Anything you want, e.g., Home Assistant
@@ -140,7 +143,8 @@ with the community [InfluxDB add-on](hassio-addons/repository/addon-influxdb) is
   - HTTP > URL: `http://a0d7b954-influxdb:8086`
   - HTTP > Access: Server (Default)
   - Auth: (leave them all disabled)
-  - InfluxDB Details > Database: _Your Home Assistant InfluxDB database_ e.g., `homeassistant`
+  - InfluxDB Details > Database: _Your Home Assistant InfluxDB database_
+    e.g., `homeassistant`
   - InfluxDB Details > User: _Grafana InfluxDB username_
   - InfluxDB Details > Password: _Grafana InfluxDB user password_
 - Hit Save & Test
@@ -276,6 +280,7 @@ SOFTWARE.
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-grafana.svg
 [commits]: https://github.com/hassio-addons/addon-grafana/commits/master
 [contributors]: https://github.com/hassio-addons/addon-grafana/graphs/contributors
+[create-db]: https://github.com/hassio-addons/repository/addon-influxdb#integrating-into-home-assistant
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
@@ -284,6 +289,7 @@ SOFTWARE.
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-grafana/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-grafana/pipelines
 [home-assistant]: https://home-assistant.io
+[influxdb-addon]: https://github.com/hassio-addons/repository/addon-influxdb
 [issue]: https://github.com/hassio-addons/addon-inflgrafanaxdb/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-grafana.svg
