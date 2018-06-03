@@ -130,9 +130,9 @@ Grafana setup. For a list of available plugins, see:
 ## Using it with the InfluxDB Community add-on
 
 Grafana does not come out of the box pre-configured, but letting it interact
-with the community [InfluxDB add-on](hassio-addons/repository/addon-influxdb) is pretty easy.
+with the community [InfluxDB add-on](hassio-addons/repository/addon-influxdb) is pretty easy. Please, follow the instructions from the on how to [create a database](hassio-addons/repository/addon-influxdb#integrating-into-home-assistant) for Home Assistant.
 
-- Follow the instructions from the [InfluxDB add-on](hassio-addons/repository/addon-influxdb#integrating-into-home-assistant) on how to intagrate into Home Assistant
+- Create a new user for Grafana on InfluxDB (InfluxDB Admin -> Users and "+ Create User")
 - Login into Grafana
 - Create a new datasource:
   - Name: Anything you want, e.g., Home Assistant
@@ -141,8 +141,8 @@ with the community [InfluxDB add-on](hassio-addons/repository/addon-influxdb) is
   - HTTP > Access: Server (Default)
   - Auth: (leave them all disabled)
   - InfluxDB Details > Database: _Your Home Assistant InfluxDB database_ e.g., `homeassistant`
-  - InfluxDB Details > User: _InfluxDB databaseuser_ e.g., `homeassistant`
-  - InfluxDB Details > Password: _InfluxDB database password_
+  - InfluxDB Details > User: _Grafana InfluxDB username_
+  - InfluxDB Details > Password: _Grafana InfluxDB user password_
 - Hit Save & Test
 
 Done!
