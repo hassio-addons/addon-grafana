@@ -172,8 +172,7 @@ stages:
         "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
         "${DOCKER_HUB_ORG}/${ADDON_SLUG}:aarch64-${REF}" \
         "${DOCKER_HUB_ORG}/${ADDON_SLUG}:amd64-${REF}" \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:armhf-${REF}" \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:i386-${REF}"
+        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:armhf-${REF}"
     - |
       docker manifest annotate \
         "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
@@ -194,12 +193,6 @@ stages:
         --os=linux \
         --arch=arm \
         --variant=v6
-    - |
-      docker manifest annotate \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:i386-${REF}" \
-        --os=linux \
-        --arch=386
     - |
       docker manifest push \
         "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}"
@@ -314,15 +307,6 @@ build:aarch64:
     - build
     - aarch64
 
-build:i386:
-  <<: *build
-  variables:
-    ADDON_ARCH: i386
-    FROM: hassioaddons/ubuntu-base-i386:2.0.0
-  tags:
-    - build
-    - i386
-
 build:amd64:
   <<: *build
   variables:
@@ -343,11 +327,6 @@ clair:aarch64:
   variables:
     ADDON_ARCH: aarch64
 
-clair:i386:
-  <<: *scan
-  variables:
-    ADDON_ARCH: i386
-
 clair:amd64:
   <<: *scan
   variables:
@@ -363,11 +342,6 @@ deploy:aarch64:
   <<: *deploy
   variables:
     ADDON_ARCH: aarch64
-
-deploy:i386:
-  <<: *deploy
-  variables:
-    ADDON_ARCH: i386
 
 deploy:amd64:
   <<: *deploy
