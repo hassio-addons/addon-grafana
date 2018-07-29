@@ -6,17 +6,13 @@ FROM ${BUILD_FROM}
 ARG BUILD_ARCH=amd64
 
 RUN \
-    GRAFANA="5.1.3" \
+    GRAFANA="5.2.2" \
     \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     \
-    && URL="https://github.com/fg2it/grafana-on-raspberry/releases/download/v${GRAFANA}/grafana_${GRAFANA}_${ARCH}.deb" \
-    && if [ "${ARCH}" = "amd64" ]; then \
-        URL="https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${GRAFANA}_${ARCH}.deb"; \
-    fi \
-    \
-    && curl -J -L -o /tmp/grafana.deb "${URL}" \
+    && curl -J -L -o /tmp/grafana.deb \
+        "https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${GRAFANA}_${ARCH}.deb" \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
