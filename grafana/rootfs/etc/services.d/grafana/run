@@ -8,6 +8,8 @@
 source /usr/lib/hassio-addons/base.sh
 
 declare -a options
+declare name
+declare value
 
 # Wait for Memcached to become available
 s6-svwait -u -t 5000 /var/run/s6/services/memcached
@@ -17,6 +19,13 @@ hass.log.info 'Starting Grafana'
 options+=(--config="/etc/grafana/grafana.ini")
 options+=(--homepath="/usr/share/grafana")
 
+# Load custom environment variables
+for var in $(hass.config.get 'env_vars|keys[]'); do
+    name=$(hass.config.get "env_vars[${var}].name")
+    value=$(hass.config.get "env_vars[${var}].value")
+    hass.log.info "Setting ${name}"
+    export "${name}=${value}"
+done
+
 # Run Grafana
 exec grafana-server "${options[@]}"
-#sleep 900

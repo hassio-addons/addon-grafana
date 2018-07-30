@@ -70,14 +70,24 @@ Example add-on configuration:
 
 ```json
 {
-    "log_level": "info",
-    "ssl": true,
-    "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem",
-    "plugins": [
-      "ayoungprogrammer-finance-datasource",
-      "grafana-clock-panel"
-    ]
+  "log_level": "info",
+  "ssl": true,
+  "certfile": "fullchain.pem",
+  "keyfile": "privkey.pem",
+  "plugins": [
+    "ayoungprogrammer-finance-datasource",
+    "grafana-clock-panel"
+  ],
+  "env_vars": [
+    {
+      "name": "GF_DEFAULT_INSTANCE_NAME",
+      "value": "Hassio"
+    },
+    {
+      "name": "GF_ALLOW_SIGN_UP",
+      "value": "true"
+    }
+  ]
 }
 ```
 
@@ -126,6 +136,19 @@ Grafana setup. For a list of available plugins, see:
 <https://grafana.com/plugins>
 
 **Note**: _Adding plugins will result in a longer start-up for the add-on._
+
+### Option: `env_vars`
+
+This option allows you to tweak every aspect of Grafana by setting
+configuration options using environment variables. See the example at the
+start of this chapter to get an idea of how the configuration looks.
+
+For more information about using these variables, see the official Grafana
+documentation:
+
+<http://docs.grafana.org/installation/configuration/#using-environment-variables>
+
+**Note**: _Only environment variables starting with `GF_` are accepted._
 
 ## Using it with the InfluxDB Community add-on
 

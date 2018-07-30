@@ -26,14 +26,21 @@
     "ssl": false,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
-    "plugins": []
+    "plugins": [],
+    "env_vars": []
   },
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str",
-    "plugins": ["str"]
+    "plugins": ["str"],
+    "env_vars": [
+      {
+        "name": "match(^GF_([A-Z0-9_])+$)",
+        "value": "str"
+      }
+    ]
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
