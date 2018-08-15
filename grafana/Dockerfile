@@ -2,9 +2,11 @@ ARG BUILD_FROM=hassioaddons/ubuntu-base:2.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # Setup base system
 ARG BUILD_ARCH=amd64
-
 RUN \
     GRAFANA="5.2.2" \
     \
