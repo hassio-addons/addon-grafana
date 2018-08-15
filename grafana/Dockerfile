@@ -23,10 +23,10 @@ RUN \
     \
     && dpkg --install /tmp/grafana.deb \
     \
-    && rm -rf /tmp/* \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/* \
-    && rm -rf /var/{cache,log}/*
+    && rm -fr \
+        /tmp/* \
+        /var/{cache,log}/* \
+        /var/lib/apt/lists/*
 
 # Copy root filesystem
 COPY rootfs /
