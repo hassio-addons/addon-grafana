@@ -306,7 +306,7 @@ SOFTWARE.
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-grafana.svg
 [commits]: https://github.com/hassio-addons/addon-grafana/commits/master
 [contributors]: https://github.com/hassio-addons/addon-grafana/graphs/contributors
-[create-db]: https://github.com/hassio-addons/repository/addon-influxdb#integrating-into-home-assistant
+[create-db]: https://github.com/hassio-addons/addon-influxdb#integrating-into-home-assistant
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -316,7 +316,7 @@ SOFTWARE.
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-grafana/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-grafana/pipelines
 [home-assistant]: https://home-assistant.io
-[influxdb-addon]: https://github.com/hassio-addons/repository/addon-influxdb
+[influxdb-addon]: https://github.com/hassio-addons/addon-influxdb
 [issue]: https://github.com/hassio-addons/addon-inflgrafanaxdb/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-grafana.svg
