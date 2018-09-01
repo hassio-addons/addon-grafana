@@ -170,8 +170,8 @@ for Home Assistant.
   - Auth: (leave them all disabled)
   - InfluxDB Details > Database: _Your Home Assistant InfluxDB database_
     e.g., `homeassistant`
-  - InfluxDB Details > User: _Grafana InfluxDB username_
-  - InfluxDB Details > Password: _Grafana InfluxDB user password_
+  - InfluxDB Details > User: _InfluxDB username_
+  - InfluxDB Details > Password: _InfluxDB user password_
 - Hit Save & Test
 
 Done!
