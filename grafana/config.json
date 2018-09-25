@@ -19,6 +19,7 @@
     "3000/tcp": 3000
   },
   "hassio_api": true,
+  "hassio_role": "default",
   "homeassistant_api": false,
   "host_network": false,
   "options": {
