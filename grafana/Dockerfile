@@ -20,6 +20,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
         libfontconfig1=2.12.6-0ubuntu2 \
         memcached=1.5.6-0ubuntu1 \
+        phantomjs=2.1.1+dfsg-2 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
