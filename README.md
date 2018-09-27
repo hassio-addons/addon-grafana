@@ -173,7 +173,7 @@ for Home Assistant.
   - InfluxDB Details > User: _Grafana InfluxDB username defined in step 1_
   - InfluxDB Details > Password: _Grafana InfluxDB user password defined_
     _in step 1_
-41. Hit Save & Test
+1. Hit Save & Test
 
 ## Embedding into Home Assistant
 
