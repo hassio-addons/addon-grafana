@@ -86,7 +86,7 @@ Example add-on configuration:
       "value": "Hassio"
     },
     {
-      "name": "GF_ALLOW_SIGN_UP",
+      "name": "GF_USERS_ALLOW_SIGN_UP",
       "value": "true"
     }
   ]
