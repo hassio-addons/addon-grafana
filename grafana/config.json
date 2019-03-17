@@ -23,7 +23,6 @@
   "homeassistant_api": false,
   "host_network": false,
   "options": {
-    "log_level": "info",
     "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
@@ -31,7 +30,7 @@
     "env_vars": []
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str",
