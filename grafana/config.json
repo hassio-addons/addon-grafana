@@ -42,8 +42,5 @@
         "value": "str"
       }
     ]
-  },
-  "environment": {
-    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
   }
 }
