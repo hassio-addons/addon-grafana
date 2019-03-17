@@ -1,12 +1,9 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # shellcheck disable=SC2191
 # ==============================================================================
 # Community Hass.io Add-ons: Grafana
 # Runs the Grafana Server
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 declare -a options
 declare name
 declare value
@@ -14,16 +11,16 @@ declare value
 # Wait for Memcached to become available
 s6-svwait -u -t 5000 /var/run/s6/services/memcached
 
-hass.log.info 'Starting Grafana'
+bashio::log.info 'Starting Grafana...'
 
 options+=(--config="/etc/grafana/grafana.ini")
 options+=(--homepath="/usr/share/grafana")
 
 # Load custom environment variables
-for var in $(hass.config.get 'env_vars|keys[]'); do
-    name=$(hass.config.get "env_vars[${var}].name")
-    value=$(hass.config.get "env_vars[${var}].value")
-    hass.log.info "Setting ${name}"
+for var in $(bashio::config 'env_vars|keys'); do
+    name=$(bashio::config "env_vars[${var}].name")
+    value=$(bashio::config "env_vars[${var}].value")
+    bashio::log.info "Setting ${name} to ${value}"
     export "${name}=${value}"
 done
 

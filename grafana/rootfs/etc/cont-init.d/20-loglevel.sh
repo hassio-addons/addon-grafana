@@ -1,31 +1,28 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Grafana
 # Configures Grafana with the add-on log level
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 declare log_level
 
 # Find the matching Grafana log level
-case "$(hass.string.lower "$(hass.config.get 'log_level')")" in
-    all|trace)
+case "${__BASHIO_LOG_LEVEL}" in
+    7|8)
         log_level="Trace"
         ;;
-    debug)
+    6)
         log_level="Debug"
         ;;
-    info|notice)
+    4|5)
         log_level="Info"
         ;;
-    warning)
+    3)
         log_level="Warn"
         ;;
-    error)
+    2)
         log_level="Error"
         ;;
-    fatal|off)
+    1|0)
         log_level="Critical"
         ;;
 esac

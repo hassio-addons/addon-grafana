@@ -1,14 +1,11 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Grafana
 # Runs the memcached Server
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 declare -a options
 
-hass.log.info 'Starting Memcached'
+bashio::log.info 'Starting Memcached...'
 
 options+=(-l 127.0.0.1)
 options+=(-m 32)
