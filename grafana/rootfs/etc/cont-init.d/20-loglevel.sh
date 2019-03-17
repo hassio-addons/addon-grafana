@@ -5,26 +5,28 @@
 # ==============================================================================
 declare log_level
 
-# Find the matching Grafana log level
-case "${__BASHIO_LOG_LEVEL}" in
-    7|8)
-        log_level="Trace"
-        ;;
-    6)
-        log_level="Debug"
-        ;;
-    4|5)
-        log_level="Info"
-        ;;
-    3)
-        log_level="Warn"
-        ;;
-    2)
-        log_level="Error"
-        ;;
-    1|0)
-        log_level="Critical"
-        ;;
-esac
+log_level="Info"
+if bashio::config.exists 'log_level'; then
+    case "$(bashio::string.lower "$(bashio::config 'log_level')")" in
+        all|trace)
+            log_level="Trace"
+            ;;
+        debug)
+            log_level="Debug"
+            ;;
+        info|notice)
+            log_level="Info"
+            ;;
+        warning)
+            log_level="Warn"
+            ;;
+        error)
+            log_level="Error"
+            ;;
+        fatal|off)
+            log_level="Critical"
+            ;;
+    esac
+fi
 
 sed -i "s/level = Info/level = ${log_level}/g" /etc/grafana/grafana.ini
