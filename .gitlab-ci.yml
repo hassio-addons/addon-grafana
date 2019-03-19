@@ -5,6 +5,7 @@ variables:
   ADDON_GITHUB_REPO: "hassio-addons/addon-grafana"
   ADDON_SLUG: "grafana"
   ADDON_TARGET: "grafana"
+  ADDON_LEGACY_TAGS: "true"
 
   ADDON_ARMHF: "false"
   ADDON_I386: "false"
