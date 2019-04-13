@@ -9,11 +9,7 @@ declare name
 declare value
 
 # Wait for Memcached to become available
-s6-svwait -u -t 5000 /var/run/s6/services/memcached
-timeout 15 \
-    bash -c \
-        'until echo > /dev/tcp/localhost/11211 ; do sleep 0.5; done' \
-            > /dev/null 2>&1
+bashio::net.wait_for 11211
 
 bashio::log.info 'Starting Grafana...'
 
