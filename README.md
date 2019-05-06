@@ -186,7 +186,9 @@ panel_iframe:
   at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
 - The ARM versions (e.g, Raspberry Pi) do not have support for PhantomJS,
   since Grafana does not support it. The PhantomJS project has been
-  abandoned as well. Grafana expects to solve this in Grafana 6.
+  abandoned as well.
+- This add-on cannot support Hass.io Ingress at this moment. This is caused
+  by technical limitation in both Grafana & Hass.io.
 
 ## Changelog & Releases
 
