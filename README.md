@@ -288,7 +288,7 @@ SOFTWARE.
 [home-assistant]: https://home-assistant.io
 [i386-shield]: https://img.shields.io/badge/i386-no-red.svg
 [influxdb-addon]: https://github.com/hassio-addons/addon-influxdb
-[issue]: https://github.com/hassio-addons/addon-inflgrafanaxdb/issues
+[issue]: https://github.com/hassio-addons/addon-grafana/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-grafana.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg
