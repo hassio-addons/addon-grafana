@@ -20,6 +20,11 @@ options+=(--homepath="/usr/share/grafana")
 for var in $(bashio::config 'env_vars|keys'); do
     name=$(bashio::config "env_vars[${var}].name")
     value=$(bashio::config "env_vars[${var}].value")
+
+    if bashio::is_secret "${value}"; then
+        value=$(bashio::secret "${value}")
+    fi
+
     bashio::log.info "Setting ${name} to ${value}"
     export "${name}=${value}"
 done
