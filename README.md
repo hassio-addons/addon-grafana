@@ -149,6 +149,7 @@ for Home Assistant.
 
 1. Create a new user for Grafana on InfluxDB
    (InfluxDB Admin -> Users and "+ Create User")
+1. Create a new database (InfluxDB Admin -> Databases and "+ Create Database") (e.g 'home assistant')
 1. Login into Grafana
 1. Create a new datasource:
   - Name: Anything you want, e.g., Home Assistant
