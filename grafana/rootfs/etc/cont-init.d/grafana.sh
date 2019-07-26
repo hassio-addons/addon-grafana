@@ -37,7 +37,11 @@ fi
 sed -i "s/level = Info/level = ${log_level}/g" "${CONFIG}"
 
 # Sets unique secret key used for signing cookies.
-sed -i "s/secret_key.*/secret_key = ${HASSIO_TOKEN}/g" "${CONFIG}"
+if ! bashio::fs.file_exists "/data/secret"; then
+    echo "${HASSIO_TOKEN}" > /data/secret
+fi
+secret=$(</data/secret)
+sed -i "s/secret_key.*/secret_key = ${secret}/g" "${CONFIG}"
 
 # Configures SSL
 if bashio::config.true 'ssl'; then
