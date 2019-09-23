@@ -20,7 +20,7 @@ RUN \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         libfontconfig1=2.12.6-0ubuntu2 \
-        memcached=1.5.6-0ubuntu1.1 \
+        memcached=1.5.6-0ubuntu1.2 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
