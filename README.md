@@ -168,7 +168,7 @@ for Home Assistant.
 It is possible to embed the Grafana interface directly into Home Assistant,
 allowing you to access it through the Home Assistant frontend.
 
-Home Assistant provides the `panel_iframe` component, for these purposes.
+Home Assistant provides the `panel_iframe` integration, for these purposes.
 
 Example configuration:
 
