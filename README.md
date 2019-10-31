@@ -121,8 +121,8 @@ for Home Assistant.
 
 1. Create a new user for Grafana on InfluxDB
    (InfluxDB Admin -> Users and "+ Create User")
-2. Login into Grafana
-3. Create a new datasource:
+1. Login into Grafana
+1. Create a new datasource:
   - Name: Anything you want, e.g., Home Assistant
   - Type: InfluxDB
   - HTTP > URL: `http://a0d7b954-influxdb:8086`
