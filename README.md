@@ -42,15 +42,11 @@ insights to your home.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Search for the "Grafana" add-on in the Hass.io add-on store.
 1. Install the "Grafana" add-on.
 1. Start the "Grafana" add-on.
 1. Check the logs of the "Grafana" to see if everything went well.
-1. Open the Web UI and log in with: admin / hassio.
-   Be sure to change the logins, once logged in.
-
-**NOTE**: Do not add this repository to Hass.io, please use:
-`https://github.com/hassio-addons/repository`.
+1. Open the Web UI.
 
 ## Configuration
 
@@ -61,9 +57,6 @@ Example add-on configuration:
 ```json
 {
   "log_level": "info",
-  "ssl": true,
-  "certfile": "fullchain.pem",
-  "keyfile": "privkey.pem",
   "plugins": [
     "ayoungprogrammer-finance-datasource",
     "grafana-clock-panel"
@@ -72,10 +65,6 @@ Example add-on configuration:
     {
       "name": "GF_DEFAULT_INSTANCE_NAME",
       "value": "Hassio"
-    },
-    {
-      "name": "GF_USERS_ALLOW_SIGN_UP",
-      "value": "true"
     }
   ]
 }
@@ -100,23 +89,6 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
-
-### Option: `ssl`
-
-Enables/Disables SSL (HTTPS) on the web interface.
-Set it `true` to enable it, `false` otherwise.
-
-### Option: `certfile`
-
-The certificate file to use for SSL.
-
-**Note**: _The file MUST be stored in `/ssl/`, which is the default for Hass.io_
-
-### Option: `keyfile`
-
-The private key file to use for SSL.
-
-**Note**: _The file MUST be stored in `/ssl/`, which is the default for Hass.io_
 
 ### Option: `plugins`
 
@@ -149,8 +121,8 @@ for Home Assistant.
 
 1. Create a new user for Grafana on InfluxDB
    (InfluxDB Admin -> Users and "+ Create User")
-1. Login into Grafana
-1. Create a new datasource:
+2. Login into Grafana
+3. Create a new datasource:
   - Name: Anything you want, e.g., Home Assistant
   - Type: InfluxDB
   - HTTP > URL: `http://a0d7b954-influxdb:8086`
@@ -163,23 +135,6 @@ for Home Assistant.
     _in step 1_
 1. Hit Save & Test
 
-## Embedding into Home Assistant
-
-It is possible to embed the Grafana interface directly into Home Assistant,
-allowing you to access it through the Home Assistant frontend.
-
-Home Assistant provides the `panel_iframe` integration, for these purposes.
-
-Example configuration:
-
-```yaml
-panel_iframe:
-  grafana:
-    title: Grafana
-    icon: mdi:chart-timeline
-    url: http://addres.to.your.hass.io:3000
-```
-
 ## Known issues and limitations
 
 - This add-on does support ARM-based devices, nevertheless, they must
@@ -187,8 +142,6 @@ panel_iframe:
 - The ARM versions (e.g, Raspberry Pi) do not have support for PhantomJS,
   since Grafana does not support it. The PhantomJS project has been
   abandoned as well.
-- This add-on cannot support Hass.io Ingress at this moment. This is caused
-  by technical limitation in both Grafana & Hass.io.
 
 ## Changelog & Releases
 

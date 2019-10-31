@@ -4,11 +4,8 @@
 # Configures Grafana
 # ==============================================================================
 readonly CONFIG="/etc/grafana/grafana.ini"
-declare certfile
-declare keyfile
+declare ingress_entry
 declare log_level
-
-bashio::config.require.ssl
 
 # Configures Grafana with the add-on log level
 log_level="Info"
@@ -43,15 +40,8 @@ fi
 secret=$(</data/secret)
 sed -i "s/secret_key.*/secret_key = ${secret}/g" "${CONFIG}"
 
-# Configures SSL
-if bashio::config.true 'ssl'; then
-    certfile=$(bashio::config 'certfile')
-    keyfile=$(bashio::config 'keyfile')
-
-    sed -i "s/protocol = http/protocol = https/g" "${CONFIG}"
-    sed -i "s#cert_file = false#cert_file = /ssl/${certfile}#g" "${CONFIG}"
-    sed -i "s#cert_key = false#cert_key = /ssl/${keyfile}#g" "${CONFIG}"
-fi
+ingress_entry=$(bashio::addon.ingress_entry)
+sed -i "s#%%ingress_entry%%#${ingress_entry}#g" "${CONFIG}"
 
 # Install user configured/requested Grafana plugins
 if bashio::config.has_value 'plugins'; then
