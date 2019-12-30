@@ -3,10 +3,12 @@
 # Community Hass.io Add-ons: grafana
 # Runs the Nginx daemon
 # ==============================================================================
-
+port=$(bashio::addon.port 80)
+if bashio::var.has_value "${port}"; then
 # Wait for grafana to become available
 bashio::net.wait_for 3000
 
 bashio::log.info "Starting NGinx..."
 
 exec nginx
+fi
