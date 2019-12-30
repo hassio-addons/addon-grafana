@@ -29,9 +29,7 @@ fi
 
 ingress_entry=$(bashio::addon.ingress_entry)
 sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
-
-ingress_interface=$(bashio::addon.ip_address)
-sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
+fi
 
 hassio_dns=$(bashio::dns.host)
 sed -i "s/%%hassio_dns%%/${hassio_dns}/g" /etc/nginx/includes/resolver.conf
