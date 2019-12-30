@@ -6,7 +6,7 @@
   "url": "https://github.com/hassio-addons/addon-grafana",
   "startup": "services",
   "ingress": true,
-  "ingress_port": 80,
+  "ingress_port": 1337,
   "panel_icon": "mdi:chart-timeline",
   "panel_title": "Grafana",
   "arch": [
