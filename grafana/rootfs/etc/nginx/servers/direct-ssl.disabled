@@ -15,5 +15,5 @@ server {
         rewrite  ^%%ingress_entry%%/(.*)  /$1 break;
         proxy_pass http://backend/;
     }
-}
+
 }
