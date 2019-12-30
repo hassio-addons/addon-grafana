@@ -25,10 +25,8 @@ if bashio::var.has_value "${port}"; then
     else
         mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
     fi
-fi
-
-ingress_entry=$(bashio::addon.ingress_entry)
-sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
+    ingress_entry=$(bashio::addon.ingress_entry)
+    sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
 fi
 
 hassio_dns=$(bashio::dns.host)
