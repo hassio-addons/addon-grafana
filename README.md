@@ -200,7 +200,7 @@ our [GitHub Repository][repository].
 
 MIT License
 
-Copyright (c) 2018-2019 Franck Nijhof
+Copyright (c) 2018-2020 Franck Nijhof
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -244,8 +244,7 @@ SOFTWARE.
 [issue]: https://github.com/hassio-addons/addon-grafana/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-grafana.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg
-[patreon-shield]: https://www.frenck.nl/images/patreon.png
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
