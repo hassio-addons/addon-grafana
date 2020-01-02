@@ -41,6 +41,7 @@
     "certfile": "str",
     "keyfile": "str",
     "ssl": "bool",
+    "grafana_ingress_user": "str?",
     "env_vars": [
       {
         "name": "match(^GF_([A-Z0-9_])+$)",
