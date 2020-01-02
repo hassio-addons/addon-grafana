@@ -48,6 +48,9 @@ comparison to installing any other Hass.io add-on.
 1. Check the logs of the "Grafana" to see if everything went well.
 1. Open the Web UI.
 
+**Note**: As the addon now supports both Ingress and direct access, the default
+`admin` user has a password of `hassio`.  __Please ensure to change this.__
+
 ## Configuration
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
