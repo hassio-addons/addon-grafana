@@ -27,3 +27,7 @@ if bashio::var.has_value "${port}"; then
     ingress_entry=$(bashio::addon.ingress_entry)
     sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
 fi
+
+ingress_interface=$(bashio::addon.ip_address)
+sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
+
