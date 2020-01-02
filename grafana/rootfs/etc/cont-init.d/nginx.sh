@@ -5,9 +5,11 @@
 # ==============================================================================
 declare port
 declare certfile
+declare grafana_user
+declare ingress_entry
 declare ingress_interface
 declare keyfile
-declare ingress_entry
+
 
 port=$(bashio::addon.port 80)
 if bashio::var.has_value "${port}"; then
@@ -31,3 +33,8 @@ fi
 ingress_interface=$(bashio::addon.ip_address)
 sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
 
+grafana_user='admin'
+if bashio::config.has_value 'grafana_ingress_user'; then
+    grafana_user=$(bashio::config 'grafana_ingress_user')
+fi
+sed -i "s/%%grafana_user%%/${grafana_user}/g" /etc/nginx/servers/ingress.conf
