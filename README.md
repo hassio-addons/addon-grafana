@@ -90,6 +90,11 @@ more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
 
+### Option: `grafana_ingress_user`
+
+When using Ingress grafana will automatically log in by default with a username
+of `admin`.  If a different user is required this option can be set.
+
 ### Option: `plugins`
 
 Allows you to specify additional Grafana plugins to be installed to your
