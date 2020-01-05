@@ -60,6 +60,7 @@ Example add-on configuration:
 ```json
 {
   "log_level": "info",
+  "grafana_ingress_user": "frenck",
   "plugins": [
     "ayoungprogrammer-finance-datasource",
     "grafana-clock-panel"
