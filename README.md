@@ -48,6 +48,9 @@ comparison to installing any other Hass.io add-on.
 1. Check the logs of the "Grafana" to see if everything went well.
 1. Open the Web UI.
 
+**Note**: As the addon now supports both Ingress and direct access, the default
+`admin` user has a password of `hassio`.  __Please ensure to change this.__
+
 ## Configuration
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
@@ -89,6 +92,11 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
+
+### Option: `grafana_ingress_user`
+
+When using Ingress grafana will automatically log in by default with a username
+of `admin`.  If a different user is required this option can be set.
 
 ### Option: `plugins`
 

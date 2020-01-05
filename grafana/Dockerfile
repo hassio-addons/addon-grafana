@@ -21,13 +21,18 @@ RUN \
     && apt-get install -y --no-install-recommends \
         libfontconfig1=2.12.6-0ubuntu2 \
         memcached=1.5.6-0ubuntu1.2 \
+        nginx=1.14.0-0ubuntu1.6 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
     && rm -fr \
         /tmp/* \
         /var/{cache,log}/* \
-        /var/lib/apt/lists/*
+        /var/lib/apt/lists/* \
+        /etc/nginx \
+    \
+    && mkdir -p /var/log/nginx \
+    && touch /var/log/nginx/error.log
 
 # Copy root filesystem
 COPY rootfs /
