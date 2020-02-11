@@ -57,21 +57,15 @@ comparison to installing any other Hass.io add-on.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "grafana_ingress_user": "frenck",
-  "plugins": [
-    "ayoungprogrammer-finance-datasource",
-    "grafana-clock-panel"
-  ],
-  "env_vars": [
-    {
-      "name": "GF_DEFAULT_INSTANCE_NAME",
-      "value": "Hassio"
-    }
-  ]
-}
+```yaml
+log_level: info
+grafana_ingress_user: frenck
+plugins:
+  - ayoungprogrammer-finance-datasource
+  - grafana-clock-panel
+env_vars:
+  - name: GF_DEFAULT_INSTANCE_NAME
+    value: Hassio
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
