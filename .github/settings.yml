@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "Grafana - Community Hass.io Add-on for Home Assistant"
+  description: "Grafana - Community Home Assistant Add-ons"
   homepage: https://addons.community
-  topics: grafana, hassio-addons, hassio, hass, home-assistant, homeassistant
+  topics: grafana, addon, addons, home-assistant, homeassistant
   private: false
   has_issues: true
   has_projects: false

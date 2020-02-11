@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bashio
 # shellcheck disable=SC2191
 # ==============================================================================
-# Community Hass.io Add-ons: Grafana
+# Community Home Assistant Add-on: Grafana
 # Runs the Grafana Server
 # ==============================================================================
 declare -a options

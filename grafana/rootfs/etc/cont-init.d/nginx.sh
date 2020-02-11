@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: grafana
+# Community Home Assistant Add-on: grafana
 # Configures NGINX
 # ==============================================================================
 declare port
