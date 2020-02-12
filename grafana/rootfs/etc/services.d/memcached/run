@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: Grafana
+# Home Assistant Community Add-on: Grafana
 # Runs the memcached Server
 # ==============================================================================
 declare -a options

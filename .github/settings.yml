@@ -1,6 +1,6 @@
 ---
 repository:
-  description: "Grafana - Community Home Assistant Add-ons"
+  description: "Grafana - Home Assistant Community Add-ons"
   homepage: https://addons.community
   topics: grafana, addon, addons, home-assistant, homeassistant
   private: false

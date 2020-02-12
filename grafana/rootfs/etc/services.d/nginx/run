@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: grafana
+# Home Assistant Community Add-on: grafana
 # Runs the Nginx daemon
 # ==============================================================================
 

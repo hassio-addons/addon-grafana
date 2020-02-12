@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: Grafana
+# Home Assistant Community Add-on: Grafana
 # Configures Grafana
 # ==============================================================================
 readonly CONFIG="/etc/grafana/grafana.ini"
