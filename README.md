@@ -37,128 +37,7 @@ data visualizations.
 Combine this add-on with the InfluxDB add-on to get insanely powerful
 insights to your home.
 
-## Installation
-
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
-
-1. Search for the "Grafana" add-on in the Supervisor add-on store.
-1. Install the "Grafana" add-on.
-1. Start the "Grafana" add-on.
-1. Check the logs of the "Grafana" to see if everything went well.
-1. Open the Web UI.
-
-**Note**: As the addon now supports both Ingress and direct access, the default
-`admin` user has a password of `hassio`.  __Please ensure to change this.__
-
-## Configuration
-
-**Note**: _Remember to restart the add-on when the configuration is changed._
-
-Example add-on configuration:
-
-```yaml
-log_level: info
-grafana_ingress_user: frenck
-plugins:
-  - ayoungprogrammer-finance-datasource
-  - grafana-clock-panel
-env_vars:
-  - name: GF_DEFAULT_INSTANCE_NAME
-    value: Hassio
-```
-
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
-
-### Option: `log_level`
-
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
-
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`:  Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
-
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
-
-### Option: `grafana_ingress_user`
-
-When using Ingress grafana will automatically log in by default with a username
-of `admin`.  If a different user is required this option can be set.
-
-### Option: `plugins`
-
-Allows you to specify additional Grafana plugins to be installed to your
-Grafana setup. For a list of available plugins, see:
-
-<https://grafana.com/plugins>
-
-**Note**: _Adding plugins will result in a longer start-up for the add-on._
-
-### Option: `env_vars`
-
-This option allows you to tweak every aspect of Grafana by setting
-configuration options using environment variables. See the example at the
-start of this chapter to get an idea of how the configuration looks.
-
-For more information about using these variables, see the official Grafana
-documentation:
-
-<http://docs.grafana.org/installation/configuration/#using-environment-variables>
-
-**Note**: _Only environment variables starting with `GF_` are accepted._
-
-## Using it with the InfluxDB Community add-on
-
-Grafana does not come out of the box pre-configured, but letting it interact
-with the community [InfluxDB add-on][influxdb-addon] is pretty easy. Please,
-follow the instructions from the on how to [create a database][create-db]
-for Home Assistant.
-
-1. Create a new user for Grafana on InfluxDB
-   (InfluxDB Admin -> Users and "+ Create User")
-1. Login into Grafana
-1. Create a new datasource:
-  - Name: Anything you want, e.g., Home Assistant
-  - Type: InfluxDB
-  - HTTP > URL: `http://a0d7b954-influxdb:8086`
-  - HTTP > Access: Server (Default)
-  - Auth: (leave them all disabled)
-  - InfluxDB Details > Database: _Your Home Assistant InfluxDB database_,
-    e.g., `homeassistant`
-  - InfluxDB Details > User: _Grafana InfluxDB username defined in step 1_
-  - InfluxDB Details > Password: _Grafana InfluxDB user password defined_
-    _in step 1_
-1. Hit Save & Test
-
-## Known issues and limitations
-
-- This add-on does support ARM-based devices, nevertheless, they must
-  at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
-- The ARM versions (e.g, Raspberry Pi) do not have support for PhantomJS,
-  since Grafana does not support it. The PhantomJS project has been
-  abandoned as well.
-
-## Changelog & Releases
-
-This repository keeps a change log using [GitHub's releases][releases]
-functionality. The format of the log is based on
-[Keep a Changelog][keepchangelog].
-
-Releases are based on [Semantic Versioning][semver], and use the format
-of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
-based on the following:
-
-- ``MAJOR``: Incompatible or major changes.
-- ``MINOR``: Backwards-compatible new features and enhancements.
-- ``PATCH``: Backwards-compatible bugfixes and package updates.
+[:books: Read the full add-on documentation][docs]
 
 ## Support
 
@@ -230,10 +109,10 @@ SOFTWARE.
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-grafana.svg
 [commits]: https://github.com/hassio-addons/addon-grafana/commits/master
 [contributors]: https://github.com/hassio-addons/addon-grafana/graphs/contributors
-[create-db]: https://github.com/hassio-addons/addon-influxdb#integrating-into-home-assistant
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
+[docs]: https://github.com/hassio-addons/addon-grafana/blob/master/grafana/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-grafana/54674?u=frenck
 [frenck]: https://github.com/frenck
@@ -241,11 +120,8 @@ SOFTWARE.
 [github-sponsors]: https://github.com/sponsors/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-grafana/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-grafana/pipelines
-[home-assistant]: https://home-assistant.io
 [i386-shield]: https://img.shields.io/badge/i386-no-red.svg
-[influxdb-addon]: https://github.com/hassio-addons/addon-influxdb
 [issue]: https://github.com/hassio-addons/addon-grafana/issues
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-grafana.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
@@ -255,4 +131,3 @@ SOFTWARE.
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-grafana.svg
 [releases]: https://github.com/hassio-addons/addon-grafana/releases
 [repository]: https://github.com/hassio-addons/repository
-[semver]: http://semver.org/spec/v2.0.0.htm
