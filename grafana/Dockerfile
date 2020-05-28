@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:5.2.0
+ARG BUILD_FROM=hassioaddons/debian-base:3.2.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -19,9 +19,9 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        libfontconfig1=2.12.6-0ubuntu2 \
-        memcached=1.5.6-0ubuntu1.2 \
-        nginx=1.14.0-0ubuntu1.7 \
+        libfontconfig1=2.13.1-2 \
+        memcached=1.5.6-1.1 \
+        nginx=1.14.2-2+deb10u1 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
