@@ -25,6 +25,29 @@ RUN \
     \
     && dpkg --install /tmp/grafana.deb \
     \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then \
+        apt-get install -y --no-install-recommends \
+            libasound2=1.1.8-1 \
+            libcups2=2.2.10-6+deb10u3  \
+            libdbus-1-3=1.12.16-1 \
+            libglib2.0-0=2.58.3-2+deb10u2 \
+            libgtk-3-0=3.24.5-1 \
+            libnss3=2:3.42.1-1+deb10u2 \
+            libx11-6=2:1.6.7-1 \
+            libx11-xcb1=2:1.6.7-1 \
+            libxcomposite1=1:0.4.4-2 \
+            libxcursor1=1:1.1.15-2 \
+            libxdamage1=1:1.1.4-3+b3 \
+            libxext6=2:1.3.3-1+b2 \
+            libxfixes3=1:5.0.3-1 \
+            libxi6=2:1.7.9-1 \
+            libxrandr2=2:1.5.1-1 \
+            libxrender1=1:0.9.10-1 \
+            libxss1=1:1.2.3-1 \
+            libxtst6=2:1.2.3-1 \
+        && grafana-cli plugins install "grafana-image-renderer" "2.0.0"; \
+    fi \
+    \
     && rm -fr \
         /tmp/* \
         /var/{cache,log}/* \
