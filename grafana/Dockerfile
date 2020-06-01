@@ -25,6 +25,10 @@ RUN \
     \
     && dpkg --install /tmp/grafana.deb \
     \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then \
+        grafana-cli plugins install "grafana-image-renderer" "2.0.0"; \
+    fi \
+    \
     && rm -fr \
         /tmp/* \
         /var/{cache,log}/* \
