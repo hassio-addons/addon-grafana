@@ -21,7 +21,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
         libfontconfig1=2.13.1-2 \
         memcached=1.5.6-1.1 \
-        nginx=1.14.2-2+deb10u1 \
+        nginx=1.14.2-2+deb10u2 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
