@@ -29,7 +29,7 @@ RUN \
         apt-get install -y --no-install-recommends \
             libasound2=1.1.8-1 \
             libcups2=2.2.10-6+deb10u3  \
-            libdbus-1-3=1.12.16-1 \
+            libdbus-1-3=1.12.20-0+deb10u1 \
             libglib2.0-0=2.58.3-2+deb10u2 \
             libgtk-3-0=3.24.5-1 \
             libnss3=2:3.42.1-1+deb10u2 \
