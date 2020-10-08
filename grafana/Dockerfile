@@ -33,8 +33,8 @@ RUN \
             libglib2.0-0=2.58.3-2+deb10u2 \
             libgtk-3-0=3.24.5-1 \
             libnss3=2:3.42.1-1+deb10u3 \
-            libx11-6=2:1.6.7-1 \
-            libx11-xcb1=2:1.6.7-1 \
+            libx11-6=2:1.6.7-1+deb10u1 \
+            libx11-xcb1=2:1.6.7-1+deb10u1 \
             libxcomposite1=1:0.4.4-2 \
             libxcursor1=1:1.1.15-2 \
             libxdamage1=1:1.1.4-3+b3 \
