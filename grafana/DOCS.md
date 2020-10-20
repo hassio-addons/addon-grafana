@@ -75,6 +75,15 @@ Grafana setup. For a list of available plugins, see:
 
 **Note**: _Adding plugins will result in a longer start-up for the add-on._
 
+### Option: `custom_grafana_cli_cmds`
+
+Allows running of custom grafana-cli commands, for example to install an addon from a non-standard repo. You do not need to add `grafana-cli`, the string will be appended for you, e.g.
+
+```yaml
+custom_grafana_cli_cmds:
+  - '--pluginUrl "https://mycustomplugin.com/releases/download/1.0.0/myplugin.zip" plugins install my-grafana-plugin'
+```
+
 ### Option: `env_vars`
 
 This option allows you to tweak every aspect of Grafana by setting

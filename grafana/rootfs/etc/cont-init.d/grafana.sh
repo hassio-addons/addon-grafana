@@ -50,3 +50,11 @@ if bashio::config.has_value 'plugins'; then
             || bashio::exit.nok "Failed installing Grafana plugin: ${plugin}"
     done
 fi
+
+# Run custom grafana-cli commands
+if bashio::config.has_value 'custom_grafana_cli_cmds'; then
+    for cmd in $(bashio::config 'custom_grafana_cli_cmds'); do
+        grafana-cli $cmd \
+            || bashio::exit.nok "Failed running grafana-cli command: grafana-cli ${cmd}"
+    done
+fi
