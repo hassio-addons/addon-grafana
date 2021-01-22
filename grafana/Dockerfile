@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/debian-base:3.2.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:4.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -28,7 +28,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then \
         apt-get install -y --no-install-recommends \
             libasound2=1.1.8-1 \
-            libcups2=2.2.10-6+deb10u3  \
+            libcups2=2.2.10-6+deb10u4  \
             libdbus-1-3=1.12.20-0+deb10u1 \
             libglib2.0-0=2.58.3-2+deb10u2 \
             libgtk-3-0=3.24.5-1 \
