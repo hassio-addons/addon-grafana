@@ -19,10 +19,10 @@
     "keyfile": "privkey.pem"
   },
   "ports": {
-    "80/tcp": null
+    "3000/tcp": null
   },
   "ports_description": {
-    "80/tcp": "Not required for Ingress"
+    "3000/tcp": "Not required for Ingress"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
