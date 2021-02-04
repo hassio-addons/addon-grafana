@@ -115,9 +115,10 @@ for Home Assistant.
 
 ## Anonymous Access
 
-Anonymous access on a local network is possible by exposing the port in the addon config, along with setting the following environment variables:
+Anonymous access on a local network is possible by exposing the port in the
+addon config, along with setting the following environment variables:
 
-```
+```yaml
 env_vars:
   - name: GF_AUTH_ANONYMOUS_ACCESS_ENABLED
     value: 'true'
