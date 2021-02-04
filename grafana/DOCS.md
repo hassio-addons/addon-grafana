@@ -121,11 +121,11 @@ addon config, along with setting the following environment variables:
 ```yaml
 env_vars:
   - name: GF_AUTH_ANONYMOUS_ACCESS_ENABLED
-    value: 'true'
+    value: "true"
   - name: GF_AUTH_ANONYMOUS_ACCESS_ORG_NAME
-    value: 'Main Org.'
+    value: "Main Org."
   - name: GF_AUTH_ANONYMOUS_ACCESS_ORG_ROLE
-    value: 'Viewer'
+    value: "Viewer"
 ```
 
 It is not possible to enable anonymous or non-administrator access with Home
