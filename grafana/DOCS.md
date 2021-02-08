@@ -22,7 +22,7 @@ comparison to installing any other Home Assistant add-on.
 1. Open the Web UI.
 
 **Note**: As the addon now supports both Ingress and direct access, the default
-`admin` user has a password of `hassio`. **Please ensure to change this.**
+`admin` user has a password of `hassio`. **It is not currently possible to change this. As a workaround and to ensure your Grafana instance is properly secure, we recommend you create an additional user with a strong password, then remove the default admin user.**
 
 ## Configuration
 
