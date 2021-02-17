@@ -116,7 +116,7 @@ for Home Assistant.
 ## Anonymous Access
 
 Anonymous access on a local network is possible by exposing the port in the
-addon config, along with setting the following environment variables:
+add-on config, along with setting the following environment variables:
 
 ```yaml
 env_vars:
@@ -130,10 +130,11 @@ env_vars:
 
 It is not possible to enable anonymous or non-administrator access with Home
 Assistant Cloud. This includes embedding Grafana resources with an iframe or
-rendered image inside of a dashboard. For more details see
-["“401: Unauthorized” iframe CARD of Grafana not working"](https://community.home-assistant.io/t/401-unauthorized-iframe-card-of-grafana-not-working/148017)
+rendered image inside of a dashboard. For more details see:
+
+- ["“401: Unauthorized” iframe CARD of Grafana not working"](https://community.home-assistant.io/t/401-unauthorized-iframe-card-of-grafana-not-working/148017)
 and
-[Anonymous login not working, Grafan add-on 3.0.0 #55](https://github.com/hassio-addons/addon-grafana/issues/55).
+- [Anonymous login not working, Grafana add-on 3.0.0 #55](https://github.com/hassio-addons/addon-grafana/issues/55).
 
 ## Known issues and limitations
 
