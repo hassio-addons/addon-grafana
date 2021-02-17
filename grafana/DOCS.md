@@ -132,8 +132,10 @@ It is not possible to enable anonymous or non-administrator access with Home
 Assistant Cloud. This includes embedding Grafana resources with an iframe or
 rendered image inside of a dashboard. For more details see:
 
-- ["“401: Unauthorized” iframe CARD of Grafana not working"](https://community.home-assistant.io/t/401-unauthorized-iframe-card-of-grafana-not-working/148017)
+- [“401: Unauthorized” iframe CARD of Grafana not working](https://community.home-assistant.io/t/401-unauthorized-iframe-card-of-grafana-not-working/148017)
+
 and
+
 - [Anonymous login not working, Grafana add-on 3.0.0 #55](https://github.com/hassio-addons/addon-grafana/issues/55).
 
 ## Known issues and limitations
