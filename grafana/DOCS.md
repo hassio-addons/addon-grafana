@@ -81,7 +81,6 @@ This option allows you to tweak every aspect of Grafana by setting
 configuration options using environment variables. See the example at the
 start of this chapter to get an idea of how the configuration looks.
 
-
 For more information about using these variables, see the official Grafana
 documentation:
 
