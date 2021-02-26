@@ -81,12 +81,24 @@ This option allows you to tweak every aspect of Grafana by setting
 configuration options using environment variables. See the example at the
 start of this chapter to get an idea of how the configuration looks.
 
+
 For more information about using these variables, see the official Grafana
 documentation:
 
 <http://docs.grafana.org/installation/configuration/#using-environment-variables>
 
 **Note**: _Only environment variables starting with `GF_` are accepted.\_
+
+Grafana defaults to the American MM/DD date format this can be changed
+using env_vars like this.
+
+```yaml
+env_vars:
+  - name: GF_DATE_FORMATS_INTERVAL_DAY
+    value: DD/MM
+  - name: GF_DATE_FORMATS_INTERVAL_HOUR
+    value: 'DD/MM HH:mm'
+```
 
 ## Using it with the InfluxDB Community add-on
 
