@@ -7,6 +7,14 @@
 declare -a options
 declare name
 declare value
+declare port
+
+port=$(bashio::addon.port 80)
+if ! bashio::var.has_value "${port}"; then
+    # Disable direct HTTP access for ingress
+    export GF_SERVER_HTTP_ADDR=127.0.0.1
+    export GF_AUTH_BASIC_ENABLED=false
+fi
 
 # Wait for Memcached to become available
 bashio::net.wait_for 11211
