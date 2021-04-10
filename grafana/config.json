@@ -10,7 +10,7 @@
   "panel_icon": "mdi:chart-timeline",
   "panel_title": "Grafana",
   "arch": ["aarch64", "amd64", "armv7"],
-  "map": ["ssl"],
+  "map": ["config", "ssl"],
   "watchdog": "http://[HOST]:1337/api/health",
   "options": {
     "plugins": [],
