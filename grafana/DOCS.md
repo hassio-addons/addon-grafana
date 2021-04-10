@@ -116,7 +116,7 @@ for Home Assistant.
 ## Anonymous Access
 
 Anonymous access on a local network is possible by exposing the port in the
-add-on config, along with setting the following environment variables:
+add-on configuration, along with setting the following environment variables:
 
 ```yaml
 env_vars:
