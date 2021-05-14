@@ -45,7 +45,7 @@ RUN \
             libxrender1=1:0.9.10-1 \
             libxss1=1:1.2.3-1 \
             libxtst6=2:1.2.3-1 \
-        && grafana-cli plugins install "grafana-image-renderer" "2.0.1"; \
+        && grafana-cli plugins install "grafana-image-renderer" "2.1.0"; \
     fi \
     \
     && rm -fr \
