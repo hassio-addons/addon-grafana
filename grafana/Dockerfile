@@ -31,6 +31,7 @@ RUN \
             libcups2=2.2.10-6+deb10u4  \
             libdbus-1-3=1.12.20-0+deb10u1 \
             libdrm-amdgpu1=2.4.97-1 \
+            libgbm1=18.3.6-2+deb10u1 \
             libglib2.0-0=2.58.3-2+deb10u2 \
             libgtk-3-0=3.24.5-1 \
             libnss3=2:3.42.1-1+deb10u3 \
