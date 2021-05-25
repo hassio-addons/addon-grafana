@@ -35,8 +35,8 @@ RUN \
             libglib2.0-0=2.58.3-2+deb10u2 \
             libgtk-3-0=3.24.5-1 \
             libnss3=2:3.42.1-1+deb10u3 \
-            libx11-6=2:1.6.7-1+deb10u1 \
-            libx11-xcb1=2:1.6.7-1+deb10u1 \
+            libx11-6=2:1.6.7-1+deb10u2 \
+            libx11-xcb1=2:1.6.7-1+deb10u2 \
             libxcb-dri3-0=1.13.1-2 \
             libxcomposite1=1:0.4.4-2 \
             libxcursor1=1:1.1.15-2 \
@@ -48,7 +48,7 @@ RUN \
             libxrender1=1:0.9.10-1 \
             libxss1=1:1.2.3-1 \
             libxtst6=2:1.2.3-1 \
-        && grafana-cli plugins install "grafana-image-renderer" "2.1.0"; \
+        && grafana-cli plugins install "grafana-image-renderer" "2.1.1"; \
     fi \
     \
     && rm -fr \
