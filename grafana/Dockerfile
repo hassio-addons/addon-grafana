@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:4.2.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:5.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -19,31 +19,31 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        libfontconfig1=2.13.1-2 \
-        memcached=1.5.6-1.1 \
-        nginx=1.14.2-2+deb10u4 \
+        libfontconfig1=2.13.1-4.2 \
+        memcached=1.6.9+dfsg-1 \
+        nginx=1.18.0-6.1 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then \
         apt-get install -y --no-install-recommends \
-            libasound2=1.1.8-1 \
-            libcups2=2.2.10-6+deb10u4  \
-            libdbus-1-3=1.12.20-0+deb10u1 \
-            libdrm-amdgpu1=2.4.97-1 \
-            libgbm1=18.3.6-2+deb10u1 \
-            libglib2.0-0=2.58.3-2+deb10u3 \
-            libgtk-3-0=3.24.5-1 \
-            libnss3=2:3.42.1-1+deb10u3 \
-            libx11-6=2:1.6.7-1+deb10u2 \
-            libx11-xcb1=2:1.6.7-1+deb10u2 \
-            libxcb-dri3-0=1.13.1-2 \
-            libxcomposite1=1:0.4.4-2 \
-            libxcursor1=1:1.1.15-2 \
-            libxdamage1=1:1.1.4-3+b3 \
-            libxext6=2:1.3.3-1+b2 \
-            libxfixes3=1:5.0.3-1 \
-            libxi6=2:1.7.9-1 \
+            libasound2=1.2.4-1.1 \
+            libcups2=2.3.3op2-3+deb11u1  \
+            libdbus-1-3=1.12.20-2 \
+            libdrm-amdgpu1=2.4.104-1 \
+            libgbm1=20.3.5-1 \
+            libglib2.0-0=2.66.8-1 \
+            libgtk-3-0=3.24.24-4 \
+            libnss3=2:3.61-1 \
+            libx11-6=2:1.7.2-1 \
+            libx11-xcb1=2:1.7.2-1 \
+            libxcb-dri3-0=1.14-3 \
+            libxcomposite1=1:0.4.5-1 \
+            libxcursor1=1:1.2.0-2 \
+            libxdamage1=1:1.1.5-2 \
+            libxext6=2:1.3.3-1.1 \
+            libxfixes3=1:5.0.3-2 \
+            libxi6=2:1.7.10-1 \
             libxrandr2=2:1.5.1-1 \
             libxrender1=1:0.9.10-1 \
             libxss1=1:1.2.3-1 \
