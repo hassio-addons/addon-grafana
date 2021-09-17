@@ -108,7 +108,7 @@ for Home Assistant.
 - HTTP > Access: Server (Default)
 - Auth: (leave them all disabled)
 - InfluxDB Details > Database: _Your Home Assistant InfluxDB database_,
-  e.g., `homeassistant`
+  e.g., `home_assistant`
 - InfluxDB Details > User: _Grafana InfluxDB username defined in step 1_
 - InfluxDB Details > Password: _Grafana InfluxDB user password defined_
   _in step 1_
