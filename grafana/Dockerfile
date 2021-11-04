@@ -20,6 +20,7 @@ RUN \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         libfontconfig1=2.13.1-4.2 \
+        fonts-noto-cjk=1:20201206-cjk+repack1-1 \
         memcached=1.6.9+dfsg-1 \
         nginx=1.18.0-6.1 \
     \
