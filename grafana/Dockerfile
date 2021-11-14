@@ -47,6 +47,7 @@ RUN \
             libxi6=2:1.7.10-1 \
             libxrandr2=2:1.5.1-1 \
             libxrender1=1:0.9.10-1 \
+            libxshmfence1=1.3-1 \
             libxss1=1:1.2.3-1 \
             libxtst6=2:1.2.3-1 \
         && grafana-cli plugins install "grafana-image-renderer" "3.2.1"; \
