@@ -4,6 +4,7 @@ version: dev
 slug: grafana
 description: The open platform for beautiful analytics and monitoring
 url: https://github.com/hassio-addons/addon-grafana
+codenotary: codenotary@frenck.dev
 startup: services
 ingress: true
 ingress_port: 1337
