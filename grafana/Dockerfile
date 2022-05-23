@@ -34,7 +34,7 @@ RUN \
             libdrm-amdgpu1=2.4.104-1 \
             libgbm1=20.3.5-1 \
             libglib2.0-0=2.66.8-1 \
-            libgtk-3-0=3.24.24-4 \
+            libgtk-3-0=3.24.24-4+deb11u2 \
             libnss3=2:3.61-1+deb11u2 \
             libx11-6=2:1.7.2-1 \
             libx11-xcb1=2:1.7.2-1 \
