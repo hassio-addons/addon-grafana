@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 # ==============================================================================
 # Home Assistant Community Add-on: grafana
 # Runs the Nginx daemon
@@ -7,6 +7,6 @@
 # Wait for grafana to become available
 bashio::net.wait_for 3000
 
-bashio::log.info "Starting NGinx..."
+bashio::log.info "Starting NGINX..."
 
 exec nginx
