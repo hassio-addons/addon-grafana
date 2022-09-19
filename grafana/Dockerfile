@@ -29,7 +29,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then \
         apt-get install -y --no-install-recommends \
             libasound2=1.2.4-1.1 \
-            libcups2=2.3.3op2-3+deb11u2  \
+            libcups2=2.3.3op2-3+deb11u2 \
             libdbus-1-3=1.12.20-2 \
             libdrm-amdgpu1=2.4.104-1 \
             libgbm1=20.3.5-1 \
