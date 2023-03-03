@@ -12,4 +12,4 @@ on:
 
 jobs:
   workflows:
-    uses: addon-grafana/workflows/.github/workflows/pr-labels.yaml@main
+    uses: addon-grafana/.github/workflows/pr-labels.yaml@main
