@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/stale.yaml@main
+    uses: addon-grafana/workflows/.github/workflows/stale.yaml@main
