@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: addon-grafana/workflows/.github/workflows/release-drafter.yaml@main
+    uses: addon-grafana/.github/workflows/release-drafter.yaml@main
