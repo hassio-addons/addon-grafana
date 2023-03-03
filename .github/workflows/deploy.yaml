@@ -14,7 +14,7 @@ on:
 
 jobs:
   workflows:
-    uses: addon-grafana/workflows/.github/workflows/addon-deploy.yaml@main
+    uses: addon-grafana/.github/workflows/addon-deploy.yaml@main
     # secrets:
       # CAS_API_KEY: ${{ secrets.CAS_API_KEY }}
       # DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
