@@ -13,4 +13,4 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/addon-ci.yaml@main
+    uses: addon-grafana/workflows/.github/workflows/addon-ci.yaml@main
