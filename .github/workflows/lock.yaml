@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: addon-grafana/workflows/.github/workflows/lock.yaml@main
+    uses: addon-grafana/.github/workflows/lock.yaml@main
