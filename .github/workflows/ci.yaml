@@ -13,4 +13,4 @@ on:
 
 jobs:
   workflows:
-    uses: addon-grafana/workflows/.github/workflows/addon-ci.yaml@main
+    uses: addon-grafana/.github/workflows/addon-ci.yaml@main
