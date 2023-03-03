@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: addon-grafana/workflows/.github/workflows/labels.yaml@main
+    uses: addon-grafana/.github/workflows/labels.yaml@main
