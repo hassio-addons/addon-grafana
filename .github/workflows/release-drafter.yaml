@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/release-drafter.yaml@main
+    uses: addon-grafana/workflows/.github/workflows/release-drafter.yaml@main
