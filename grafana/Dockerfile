@@ -50,7 +50,7 @@ RUN \
             libxshmfence1=1.3-1 \
             libxss1=1:1.2.3-1 \
             libxtst6=2:1.2.3-1 \
-        && grafana-cli plugins install "grafana-image-renderer" "3.6.1"; \
+        && grafana-cli plugins install "grafana-image-renderer" "3.6.4"; \
     fi \
     \
     && rm -fr \
