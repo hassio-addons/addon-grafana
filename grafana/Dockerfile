@@ -7,15 +7,15 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
+ARG GRAFANA_VERSION="v9.4.3"
+ARG GRAFANA_IMAGE_RENDERER_VERSION="v3.6.1"
 RUN \
-    GRAFANA="9.4.3" \
-    \
-    && ARCH="${BUILD_ARCH}" \
+    ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
     \
     && curl -J -L -o /tmp/grafana.deb \
-        "https://dl.grafana.com/oss/release/grafana_${GRAFANA}_${ARCH}.deb" \
+        "https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION#v}_${ARCH}.deb" \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -50,7 +50,7 @@ RUN \
             libxshmfence1=1.3-1 \
             libxss1=1:1.2.3-1 \
             libxtst6=2:1.2.3-1 \
-        && grafana-cli plugins install "grafana-image-renderer" "3.6.1"; \
+        && grafana-cli plugins install "grafana-image-renderer" "${GRAFANA_IMAGE_RENDERER_VERSION#v}"; \
     fi \
     \
     && rm -fr \
