@@ -46,8 +46,17 @@ sed -i "s#%%ingress_entry%%#${ingress_entry}#g" "${CONFIG}"
 
 # Install user configured/requested Grafana plugins
 if bashio::config.has_value 'plugins'; then
-    for plugin in $(bashio::config 'plugins'); do
-        grafana-cli plugins install "$plugin" \
-            || bashio::exit.nok "Failed installing Grafana plugin: ${plugin}"
+    for plugin in $(bashio::config 'plugins|keys'); do
+        name=$(bashio::config "plugins[${plugin}].name")
+        if bashio::config.exists "plugins[${plugin}].url"; then
+            url=$(bashio::config "plugins[${plugin}].url")
+            bashio::log.debug "Installing ${name} from ${url}"
+            grafana-cli --pluginUrl ${url} plugins install "$name" \
+                || bashio::exit.nok "Failed installing Grafana plugin: ${name} from: ${url}"
+        else
+            bashio::log.debug "Installing ${name}"
+            grafana-cli plugins install "$name" \
+                || bashio::exit.nok "Failed installing Grafana plugin: ${name}"
+		fi
     done
 fi

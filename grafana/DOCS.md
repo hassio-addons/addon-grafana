@@ -40,8 +40,8 @@ Example add-on configuration:
 log_level: info
 grafana_ingress_user: frenck
 plugins:
-  - ayoungprogrammer-finance-datasource
-  - grafana-clock-panel
+  - name: ayoungprogrammer-finance-datasource
+  - name: grafana-clock-panel
 env_vars:
   - name: GF_DEFAULT_INSTANCE_NAME
     value: Hassio
@@ -78,6 +78,15 @@ Allows you to specify additional Grafana plugins to be installed to your
 Grafana setup. For a list of available plugins, see:
 
 <https://grafana.com/plugins>
+
+If you want to install a plugin from an URL, add the key `url` to the plugin
+configuration:
+
+```yaml
+plugins:
+  - name: my-plugin-name
+    url: https://github.com/my-repo/my-plugin-name/releases/download/0.1.0/my-plugin-name-0.1.0.zip
+```
 
 **Note**: _Adding plugins will result in a longer start-up for the add-on._
 
@@ -138,6 +147,17 @@ It is not possible to enable anonymous or non-administrator access with Home
 Assistant Cloud. This includes embedding Grafana resources with an iframe or
 rendered image inside of a dashboard. For more details see
 [Anonymous login not working, Grafana add-on 3.0.0 #55](https://github.com/hassio-addons/addon-grafana/issues/55).
+
+## Unsigned plugins
+
+Starting with Grafana 7.x, it is mandatory to have plugins signed when running in production mode.
+However, there is an option to allow loading unsigned plugins:
+
+```yaml
+env_vars:
+  - name: GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS
+    value: my-plugin-name
+```
 
 ## Known issues and limitations
 
