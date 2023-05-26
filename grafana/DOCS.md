@@ -88,6 +88,16 @@ plugins:
     url: https://github.com/my-repo/my-plugin-name/releases/download/0.1.0/my-plugin-name-0.1.0.zip
 ```
 
+Starting with Grafana 7.x, it is mandatory to have plugins signed when running in production mode.
+If you want to install unsigned plugins, you must set the `unsigned` property to `true`:
+
+```yaml
+plugins:
+  - name: my-unsigned-plugin-name
+    url: https://github.com/my-other-repo/my-unsigned-plugin-name/releases/download/0.1.0/my-unsigned-plugin-name-0.1.0.zip
+    unsigned: true
+```
+
 **Note**: _Adding plugins will result in a longer start-up for the add-on._
 
 ### Option: `env_vars`
@@ -147,17 +157,6 @@ It is not possible to enable anonymous or non-administrator access with Home
 Assistant Cloud. This includes embedding Grafana resources with an iframe or
 rendered image inside of a dashboard. For more details see
 [Anonymous login not working, Grafana add-on 3.0.0 #55](https://github.com/hassio-addons/addon-grafana/issues/55).
-
-## Unsigned plugins
-
-Starting with Grafana 7.x, it is mandatory to have plugins signed when running in production mode.
-However, there is an option to allow loading unsigned plugins:
-
-```yaml
-env_vars:
-  - name: GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS
-    value: my-plugin-name
-```
 
 ## Known issues and limitations
 
