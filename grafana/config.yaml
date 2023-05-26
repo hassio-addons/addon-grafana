@@ -21,6 +21,7 @@ map:
   - ssl
 options:
   plugins: []
+  custom_plugins: []
   env_vars: []
   ssl: true
   certfile: fullchain.pem
@@ -32,8 +33,11 @@ ports_description:
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   plugins:
+    - str
+  custom_plugins:
     - name: str
-      url: str?
+      url: str
+      unsigned: bool?
   certfile: str
   keyfile: str
   ssl: bool
