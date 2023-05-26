@@ -40,8 +40,8 @@ Example add-on configuration:
 log_level: info
 grafana_ingress_user: frenck
 plugins:
-  - name: ayoungprogrammer-finance-datasource
-  - name: grafana-clock-panel
+  - ayoungprogrammer-finance-datasource
+  - grafana-clock-panel
 env_vars:
   - name: GF_DEFAULT_INSTANCE_NAME
     value: Hassio
@@ -79,26 +79,23 @@ Grafana setup. For a list of available plugins, see:
 
 <https://grafana.com/plugins>
 
-If you want to install a plugin from an URL, add the key `url` to the plugin
-configuration:
+**Note**: _Adding plugins will result in a longer start-up for the add-on._
 
-```yaml
-plugins:
-  - name: my-plugin-name
-    url: https://github.com/my-repo/my-plugin-name/releases/download/0.1.0/my-plugin-name-0.1.0.zip
-```
+### Option: `custom_plugins`
+
+Allows you to specify additional Grafana custom plugins to be installed to your
+Grafana setup from an URL.
+You must speficy the property `url` to the plugin configuration.
 
 Starting with Grafana 7.x, it is mandatory to have plugins signed when running in production mode.
-If you want to install unsigned plugins, you must set the `unsigned` property to `true`:
+If you want to install unsigned plugins, you must also set the `unsigned` property to `true`:
 
 ```yaml
-plugins:
-  - name: my-unsigned-plugin-name
-    url: https://github.com/my-other-repo/my-unsigned-plugin-name/releases/download/0.1.0/my-unsigned-plugin-name-0.1.0.zip
+custom_plugins:
+  - name: my-plugin-name
+    url: https://github.com/my-repo/my-plugin-name/releases/download/0.1.0/my-plugin-name-0.1.0.zip
     unsigned: true
 ```
-
-**Note**: _Adding plugins will result in a longer start-up for the add-on._
 
 ### Option: `env_vars`
 
