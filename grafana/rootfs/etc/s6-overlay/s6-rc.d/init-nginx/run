@@ -31,9 +31,6 @@ if bashio::var.has_value "${port}"; then
     sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
 fi
 
-ingress_interface=$(bashio::addon.ip_address)
-sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
-
 grafana_user='admin'
 if bashio::config.has_value 'grafana_ingress_user'; then
     grafana_user=$(bashio::config 'grafana_ingress_user')
