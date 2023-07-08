@@ -19,7 +19,6 @@ arch:
 map:
   - config
   - ssl
-watchdog: http://[HOST]:1337/api/health
 options:
   plugins: []
   env_vars: []
