@@ -51,3 +51,14 @@ if bashio::config.has_value 'plugins'; then
             || bashio::exit.nok "Failed installing Grafana plugin: ${plugin}"
     done
 fi
+
+# Install user configured/requested Grafana custom plugins (from URL)
+if bashio::config.has_value 'custom_plugins'; then
+    for plugin in $(bashio::config 'custom_plugins|keys'); do
+        name=$(bashio::config "custom_plugins[${plugin}].name")
+        url=$(bashio::config "custom_plugins[${plugin}].url")
+        bashio::log.debug "Installing custom plugin ${name} from ${url}"
+        grafana-cli --pluginUrl ${url} plugins install $name \
+            || bashio::exit.nok "Failed installing Grafana custom plugin: ${name} from: ${url}"
+    done
+fi

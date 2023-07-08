@@ -5,6 +5,7 @@
 # Runs the Grafana Server
 # ==============================================================================
 declare -a options
+declare -a unsigned_plugins
 declare name
 declare value
 
@@ -23,6 +24,18 @@ for var in $(bashio::config 'env_vars|keys'); do
     bashio::log.info "Setting ${name} to ${value}"
     export "${name}=${value}"
 done
+
+# Verify if we have unsigned custom plugins to load
+if bashio::config.has_value 'custom_plugins'; then
+    for plugin in $(bashio::config 'custom_plugins|keys'); do
+        name=$(bashio::config "custom_plugins[${plugin}].name")
+        if bashio::config.true "custom_plugins[${plugin}].unsigned"; then
+            unsigned_plugins+="${name},"
+        fi
+    done
+    export "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=${unsigned_plugins}"
+fi
+
 
 # Run Grafana
 exec grafana-server "${options[@]}"
