@@ -23,7 +23,7 @@
       ],
       "versioningTemplate": "deb",
       "datasourceTemplate": "repology",
-      "depNameTemplate": "debian_11/{{package}}"
+      "depNameTemplate": "debian_12/{{package}}"
     },
     {
       "fileMatch": ["/Dockerfile$"],
