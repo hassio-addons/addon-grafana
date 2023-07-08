@@ -19,37 +19,37 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        libfontconfig1=2.13.1-4.2 \
-        fonts-noto-cjk=1:20201206-cjk+repack1-1 \
-        memcached=1.6.9+dfsg-1 \
-        nginx=1.18.0-6.1+deb11u3 \
+        libfontconfig1=2.14.1-4 \
+        fonts-noto-cjk=1:20220127+repack1-1 \
+        memcached=1.6.18-1 \
+        nginx=1.22.1-9 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then \
         apt-get install -y --no-install-recommends \
-            libasound2=1.2.4-1.1 \
-            libcups2=2.3.3op2-3+deb11u2 \
-            libdbus-1-3=1.12.24-0+deb11u1 \
-            libdrm-amdgpu1=2.4.104-1 \
-            libgbm1=20.3.5-1 \
-            libglib2.0-0=2.66.8-1 \
-            libgtk-3-0=3.24.24-4+deb11u3 \
-            libnss3=2:3.61-1+deb11u3 \
-            libx11-6=2:1.7.2-1 \
-            libx11-xcb1=2:1.7.2-1 \
-            libxcb-dri3-0=1.14-3 \
+            libasound2=1.2.8-1+b1 \
+            libcups2=2.4.2-3 \
+            libdbus-1-3=1.14.6-1 \
+            libdrm-amdgpu1=2.4.114-1+b1 \
+            libgbm1=22.3.6-1+deb12u1 \
+            libglib2.0-0=2.74.6-2 \
+            libgtk-3-0=3.24.37-2 \
+            libnss3=2:3.87.1-1 \
+            libx11-6=2:1.8.4-2+deb12u1 \
+            libx11-xcb1=2:1.8.4-2+deb12u1 \
+            libxcb-dri3-0=1.15-1 \
             libxcomposite1=1:0.4.5-1 \
-            libxcursor1=1:1.2.0-2 \
-            libxdamage1=1:1.1.5-2 \
-            libxext6=2:1.3.3-1.1 \
-            libxfixes3=1:5.0.3-2 \
-            libxi6=2:1.7.10-1 \
-            libxrandr2=2:1.5.1-1 \
-            libxrender1=1:0.9.10-1 \
+            libxcursor1=1:1.2.1-1 \
+            libxdamage1=1:1.1.6-1 \
+            libxext6=2:1.3.4-1+b1 \
+            libxfixes3=1:6.0.0-2 \
+            libxi6=2:1.8-1+b1 \
+            libxrandr2=2:1.5.2-2+b1 \
+            libxrender1=1:0.9.10-1.1 \
             libxshmfence1=1.3-1 \
             libxss1=1:1.2.3-1 \
-            libxtst6=2:1.2.3-1 \
+            libxtst6=2:1.2.3-1.1 \
         && grafana-cli plugins install "grafana-image-renderer" "${GRAFANA_IMAGE_RENDERER_VERSION#v}"; \
     fi \
     \
