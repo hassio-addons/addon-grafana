@@ -85,7 +85,7 @@ Grafana setup. For a list of available plugins, see:
 
 Allows you to specify additional Grafana custom plugins to be installed to your
 Grafana setup from an URL.
-You must speficy the property `url` to the plugin configuration.
+You must specify the property `url` to the plugin configuration.
 
 Starting with Grafana 7.x, it is mandatory to have plugins signed when running in production mode.
 If you want to install unsigned plugins, you must also set the `unsigned` property to `true`:
