@@ -30,7 +30,7 @@ RUN \
         apt-get install -y --no-install-recommends \
             libasound2=1.2.8-1+b1 \
             libcups2=2.4.2-3+deb12u1 \
-            libdbus-1-3=1.14.6-1 \
+            libdbus-1-3=1.14.8-2~deb12u1 \
             libdrm-amdgpu1=2.4.114-1+b1 \
             libgbm1=22.3.6-1+deb12u1 \
             libglib2.0-0=2.74.6-2 \
