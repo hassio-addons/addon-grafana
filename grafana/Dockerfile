@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
-ARG GRAFANA_VERSION="v10.1.0"
+ARG GRAFANA_VERSION="v10.1.1"
 ARG GRAFANA_IMAGE_RENDERER_VERSION="v3.8.2"
 RUN \
     ARCH="${BUILD_ARCH}" \
@@ -19,9 +19,10 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        libfontconfig1=2.14.1-4 \
         fonts-noto-cjk=1:20220127+repack1-1 \
+        libfontconfig1=2.14.1-4 \
         memcached=1.6.18-1 \
+        musl=1.2.3-1 \
         nginx=1.22.1-9 \
     \
     && dpkg --install /tmp/grafana.deb \
