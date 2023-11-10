@@ -17,7 +17,7 @@ arch:
   - amd64
   - armv7
 map:
-  - config
+  - homeassistant_config
   - ssl
 options:
   plugins: []
