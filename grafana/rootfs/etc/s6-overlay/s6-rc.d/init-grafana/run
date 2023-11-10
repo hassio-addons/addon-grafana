@@ -8,6 +8,11 @@ readonly CONFIG="/etc/grafana/grafana.ini"
 declare ingress_entry
 declare log_level
 
+# Symlink the new style config directory to the old one. People might have
+# configurations for Grafana that access the database via the old path.
+ln -s "/homeassistant" "/config" \
+    || bashio::log.warning "Failed linking Home Assistant configuration alias"
+
 # Configures Grafana with the add-on log level
 log_level="Info"
 if bashio::config.exists 'log_level'; then
