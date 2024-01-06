@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:7.2.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:7.3.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -37,8 +37,8 @@ RUN \
             libglib2.0-0=2.74.6-2 \
             libgtk-3-0=3.24.38-2~deb12u1 \
             libnss3=2:3.87.1-1 \
-            libx11-6=2:1.8.4-2+deb12u1 \
-            libx11-xcb1=2:1.8.4-2+deb12u1 \
+            libx11-6=2:1.8.4-2+deb12u2 \
+            libx11-xcb1=2:1.8.4-2+deb12u2 \
             libxcb-dri3-0=1.15-1 \
             libxcomposite1=1:0.4.5-1 \
             libxcursor1=1:1.2.1-1 \
