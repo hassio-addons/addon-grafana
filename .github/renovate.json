@@ -32,14 +32,6 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "grafana/grafana"
-    },
-    {
-      "fileMatch": ["/Dockerfile$"],
-      "matchStrings": [
-        "ARG GRAFANA_IMAGE_RENDERER_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "grafana/grafana-image-renderer"
     }
   ],
   "packageRules": [

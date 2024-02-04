@@ -40,6 +40,7 @@ Example add-on configuration:
 log_level: info
 grafana_ingress_user: frenck
 plugins:
+  - grafana-image-renderer
   - ayoungprogrammer-finance-datasource
   - grafana-clock-panel
 env_vars:

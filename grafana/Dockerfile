@@ -8,7 +8,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base system
 ARG BUILD_ARCH=amd64
 ARG GRAFANA_VERSION="v10.3.1"
-ARG GRAFANA_IMAGE_RENDERER_VERSION="v3.9.1"
 RUN \
     ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
@@ -51,7 +50,6 @@ RUN \
             libxshmfence1=1.3-1 \
             libxss1=1:1.2.3-1 \
             libxtst6=2:1.2.3-1.1 \
-        && grafana-cli plugins install "grafana-image-renderer" "${GRAFANA_IMAGE_RENDERER_VERSION#v}"; \
     fi \
     \
     && rm -fr \
