@@ -18,7 +18,6 @@ arch:
   - armv7
 map:
   - homeassistant_config
-  - media
   - share
   - ssl
 options:
