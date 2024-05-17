@@ -5,8 +5,8 @@ server {
     include /etc/nginx/includes/ssl_params.conf;
     include /etc/nginx/includes/proxy_params.conf;
 
-    ssl_certificate %%certfile%%;
-    ssl_certificate_key %%keyfile%%;
+    ssl_certificate %%sslpath%%/%%certfile%%;
+    ssl_certificate_key %%sslpath%%/%%keyfile%%;
 
     location / {
         return 302 $scheme://$http_host%%ingress_entry%%/;
