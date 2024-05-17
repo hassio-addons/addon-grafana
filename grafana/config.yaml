@@ -25,8 +25,9 @@ options:
   custom_plugins: []
   env_vars: []
   ssl: true
-  certfile: /ssl/fullchain.pem
-  keyfile: /ssl/privkey.pem
+  sslpath: /ssl/
+  certfile: fullchain.pem
+  keyfile: privkey.pem
 ports:
   80/tcp: null
 ports_description:
@@ -39,6 +40,7 @@ schema:
     - name: str
       url: str
       unsigned: bool?
+  sslpath: str
   certfile: str
   keyfile: str
   ssl: bool
