@@ -2,12 +2,19 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
-  "labels": ["dependencies", "no-stale"],
+  "labels": [
+    "dependencies",
+    "no-stale"
+  ],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$",
+        "/build.yaml$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -16,7 +23,10 @@
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s\\s(?<package>[a-z0-9][a-z0-9-]+)=(?<currentValue>[a-z0-9-:_+~.]+)\\s+"
@@ -26,7 +36,10 @@
       "depNameTemplate": "debian_12/{{package}}"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStrings": [
         "ARG GRAFANA_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
@@ -34,7 +47,10 @@
       "depNameTemplate": "grafana/grafana"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStrings": [
         "ARG GRAFANA_IMAGE_RENDERER_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
@@ -44,22 +60,36 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["repology"],
+      "matchDatasources": [
+        "repology"
+      ],
       "automerge": true
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"]
+      "matchDatasources": [
+        "docker"
+      ]
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     },
     {
-      "matchDatasources": ["github-releases"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDatasources": [
+        "github-releases"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
   ]
