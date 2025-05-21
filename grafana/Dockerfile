@@ -23,7 +23,7 @@ RUN \
         libfontconfig1=2.14.1-4 \
         memcached=1.6.18-1 \
         musl=1.2.3-1 \
-        nginx=1.22.1-9+deb12u1 \
+        nginx=1.22.1-9+deb12u2 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
