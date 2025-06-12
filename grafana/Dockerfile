@@ -34,7 +34,7 @@ RUN \
             libdbus-1-3=1.14.10-1~deb12u1 \
             libdrm-amdgpu1=2.4.114-1+b1 \
             libgbm1=22.3.6-1+deb12u1 \
-            libglib2.0-0=2.74.6-2+deb12u5 \
+            libglib2.0-0=2.74.6-2+deb12u6 \
             libgtk-3-0=3.24.38-2~deb12u3 \
             libnss3=2:3.87.1-1+deb12u1 \
             libx11-6=2:1.8.4-2+deb12u2 \
