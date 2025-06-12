@@ -5,6 +5,7 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
+  "forkProcessing": "enabled",
   "customManagers": [
     {
       "customType": "regex",
