@@ -45,6 +45,15 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "grafana/grafana-image-renderer"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["/Dockerfile$"],
+      "matchStrings": [
+        "ARG VICTORIAMETRICS_DATASOURCE_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "VictoriaMetrics/victoriametrics-datasource"
     }
   ],
   "packageRules": [

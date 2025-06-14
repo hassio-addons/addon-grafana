@@ -9,6 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG BUILD_ARCH=amd64
 ARG GRAFANA_VERSION="v12.0.1"
 ARG GRAFANA_IMAGE_RENDERER_VERSION="v3.12.6"
+ARG VICTORIAMETRICS_DATASOURCE_VERSION="v0.15.1"
 RUN \
     ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
@@ -53,6 +54,8 @@ RUN \
             libxtst6=2:1.2.3-1.1 \
         && grafana-cli plugins install "grafana-image-renderer" "${GRAFANA_IMAGE_RENDERER_VERSION#v}"; \
     fi \
+    \
+    && grafana-cli plugins install "victoriametrics-metrics-datasource" "${VICTORIAMETRICS_DATASOURCE_VERSION#v}"; \
     \
     && rm -fr \
         /tmp/* \

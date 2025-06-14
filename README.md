@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Grafana
+# Home Assistant Add-on: Grafana with VictoriaMetrics datasource
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
