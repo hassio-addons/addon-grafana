@@ -19,38 +19,38 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        fonts-noto-cjk=1:20220127+repack1-1 \
-        libfontconfig1=2.14.1-4 \
-        memcached=1.6.18-1 \
-        musl=1.2.3-1 \
-        nginx=1.22.1-9+deb12u1 \
+        fonts-noto-cjk=1:20240730+repack1-1 \
+        libfontconfig1=2.15.0-2.3 \
+        memcached=1.6.38-1 \
+        musl=1.2.5-3 \
+        nginx=1.26.3-3+deb13u1 \
     \
     && dpkg --install /tmp/grafana.deb \
     \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then \
         apt-get install -y --no-install-recommends \
-            libasound2=1.2.8-1+b1 \
-            libcups2=2.4.2-3+deb12u8 \
-            libdbus-1-3=1.14.10-1~deb12u1 \
-            libdrm-amdgpu1=2.4.114-1+b1 \
-            libgbm1=22.3.6-1+deb12u1 \
-            libglib2.0-0=2.74.6-2+deb12u5 \
-            libgtk-3-0=3.24.38-2~deb12u3 \
-            libnss3=2:3.87.1-1+deb12u1 \
-            libx11-6=2:1.8.4-2+deb12u2 \
-            libx11-xcb1=2:1.8.4-2+deb12u2 \
-            libxcb-dri3-0=1.15-1 \
-            libxcomposite1=1:0.4.5-1 \
-            libxcursor1=1:1.2.1-1 \
-            libxdamage1=1:1.1.6-1 \
-            libxext6=2:1.3.4-1+b1 \
-            libxfixes3=1:6.0.0-2 \
-            libxi6=2:1.8-1+b1 \
-            libxrandr2=2:1.5.2-2+b1 \
-            libxrender1=1:0.9.10-1.1 \
-            libxshmfence1=1.3-1 \
-            libxss1=1:1.2.3-1 \
-            libxtst6=2:1.2.3-1.1 \
+            libasound2t64=1.2.14-1 \
+            libcups2t64=2.4.10-3+deb13u1 \
+            libdbus-1-3=1.16.2-2 \
+            libdrm-amdgpu1=2.4.124-2 \
+            libgbm1=25.0.7-2 \
+            libglib2.0-0t64=2.84.4-3~deb13u1 \
+            libgtk-4-1=4.18.6+ds-2 \
+            libnss3=2:3.110-1 \
+            libx11-6=2:1.8.12-1 \
+            libx11-xcb1=2:1.8.12-1 \
+            libxcb-dri3-0=1.17.0-2+b1 \
+            libxcomposite1=1:0.4.6-1 \
+            libxcursor1=1:1.2.3-1 \
+            libxdamage1=1:1.1.6-1+b2 \
+            libxext6=2:1.3.4-1+b3 \
+            libxfixes3=1:6.0.0-2+b4 \
+            libxi6=2:1.8.2-1 \
+            libxrandr2=2:1.5.4-1+b3 \
+            libxrender1=1:0.9.12-1 \
+            libxshmfence1=1.3.3-1 \
+            libxss1=1:1.2.3-1+b3 \
+            libxtst6=2:1.2.5-1 \
         && grafana-cli plugins install "grafana-image-renderer" "${GRAFANA_IMAGE_RENDERER_VERSION#v}"; \
     fi \
     \
