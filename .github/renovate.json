@@ -25,7 +25,7 @@
       ],
       "versioningTemplate": "deb",
       "datasourceTemplate": "repology",
-      "depNameTemplate": "debian_12/{{package}}"
+      "depNameTemplate": "debian_13/{{package}}"
     },
     {
       "customType": "regex",
