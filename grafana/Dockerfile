@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
-ARG GRAFANA_VERSION="v12.2.1"
+ARG GRAFANA_VERSION="v12.3.0"
 ARG GRAFANA_IMAGE_RENDERER_VERSION="v4.1.5"
 RUN \
     ARCH="${BUILD_ARCH}" \
